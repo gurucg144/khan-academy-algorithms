@@ -1,3 +1,4 @@
+// MERGE
 // Takes in an array that has two sorted subarrays,
 //  from [p..q] and [q+1..r], and merges the array
 var merge = function(array, p, q, r) {
@@ -35,6 +36,11 @@ var merge = function(array, p, q, r) {
         k++;
     }
     
+        
+    // Once one of lowHalf and highHalf has been fully copied
+    //  back into array, copy the remaining elements from the
+    //  other temporary array back into the array
+    
     while (i < lowHalf.length) {
         array[k] = lowHalf[i];
         i++;
@@ -46,11 +52,6 @@ var merge = function(array, p, q, r) {
         j++;
         k++;
     }
-    
-    
-    // Once one of lowHalf and highHalf has been fully copied
-    //  back into array, copy the remaining elements from the
-    //  other temporary array back into the array
     
 };
 
@@ -69,7 +70,7 @@ merge(array2, 0,
 println("Array2 after merging: " + array2);
 Program.assertEqual(array2, [-4, 0, 2, 3, 6, 7, 9, 11, 12, 14]);
 
-
+// MERGE-SORT
 // Takes in an array and recursively merge sorts it
 var mergeSort = function(array, p, r) {
     if (p<r) {
